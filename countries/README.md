@@ -14,6 +14,7 @@ Requirements: sqlite3, diff, patch, and unzip.
 cd ~
 mkdir sql
 cd sql
+cp ~/Downloads/countries.diff .
 cp ~/Downloads/ip2nation.zip .
 unzip ip2nation.zip
 patch -p 0 < ip2nation.diff

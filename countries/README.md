@@ -22,3 +22,4 @@ sqlite3 countries.db < countries.sql
 
 == 2014-07-12 ==
 v1.0.0          *   Initial files
+

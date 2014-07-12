@@ -1,0 +1,29 @@
+--- ip2nation.sql.orig	2014-06-21 20:03:26.000000000 -0400
++++ ip2nation.sql	2014-07-11 22:55:17.745173634 -0400
+@@ -1,9 +1,9 @@
+ DROP TABLE IF EXISTS ip2nation;
+ 
+ CREATE TABLE ip2nation (
+-  ip int(11) unsigned NOT NULL default '0',
++  ip int unsigned NOT NULL default '0',
+   country char(2) NOT NULL default '',
+-  KEY ip (ip)
++  PRIMARY KEY (ip)
+ );
+ 
+ DROP TABLE IF EXISTS ip2nationCountries;
+@@ -16,8 +16,7 @@
+   country varchar(255) NOT NULL default '',
+   lat float NOT NULL default '0',
+   lon float NOT NULL default '0',  
+-  PRIMARY KEY  (code),
+-  KEY code (code)
++  PRIMARY KEY  (code)
+ );
+ INSERT INTO ip2nation (ip, country) VALUES(0, 'us');
+ INSERT INTO ip2nation (ip, country) VALUES(687865856, 'za');
+@@ -62765,3 +62764,4 @@
+ INSERT INTO ip2nationCountries (code, iso_code_2, iso_code_3, iso_country, country, lat, lon) VALUES('01', '', '', '', 'Private', 0, 0);
+ INSERT INTO ip2nationCountries (code, iso_code_2, iso_code_3, iso_country, country, lat, lon) VALUES('ps', 'PS', 'PSE', 'Palestinian Territory, Occupied', 'Palestinian Territory, Occupied', 31.89, 34.9);
+ INSERT INTO ip2nationCountries (code, iso_code_2, iso_code_3, iso_country, country, lat, lon) VALUES('me', 'ME', 'MNE', 'Montenegro', 'Montenegro', 42.74, 19.31);
++

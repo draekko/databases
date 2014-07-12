@@ -1,0 +1,44 @@
+--- countries.sql.orig	2014-07-12 14:19:39.415400205 -0400
++++ countries.sql	2014-07-12 14:19:51.435399821 -0400
+@@ -1,16 +1,8 @@
+-/**
+-  * Country names, continent names and ISO-3166 codes.
+-  *
+-  * @updated  2014-04-18
+-  * @link     http://www.geekality.net/?p=1182
+-  * @link     https://bitbucket.org/svish/iso-3166-country-codes
+-  *
+-  */
+ CREATE TABLE IF NOT EXISTS `continents` (
+-  `code` CHAR(2) NOT NULL COMMENT 'Continent code',
++  `code` CHAR(2) NOT NULL,
+   `name` VARCHAR(255),
+   PRIMARY KEY (`code`)
+-) ENGINE=InnoDB;
++);
+ 
+ INSERT INTO `continents` VALUES
+   ('AF', 'Africa'),
+@@ -23,16 +15,15 @@
+ 
+ 
+ CREATE TABLE IF NOT EXISTS `countries` (
+-  `code` CHAR(2) NOT NULL COMMENT 'Two-letter country code (ISO 3166-1 alpha-2)',
+-  `name` VARCHAR(255) NOT NULL COMMENT 'English country name',
+-  `full_name` VARCHAR(255) NOT NULL COMMENT 'Full English country name',
+-  `iso3` CHAR(3) NOT NULL COMMENT 'Three-letter country code (ISO 3166-1 alpha-3)',
+-  `number` SMALLINT(3) ZEROFILL NOT NULL COMMENT 'Three-digit country number (ISO 3166-1 numeric)',
++  `code` CHAR(2) NOT NULL,
++  `name` VARCHAR(255) NOT NULL,
++  `full_name` VARCHAR(255) NOT NULL,
++  `iso3` CHAR(3) NOT NULL,
++  `number` SMALLINT(3) NOT NULL,
+   `continent_code` CHAR(2) NOT NULL,
+   PRIMARY KEY (`code`),
+-  KEY `continent_code` (`continent_code`),
+   CONSTRAINT `fk_countries_continents` FOREIGN KEY (`continent_code`) REFERENCES `continents` (`code`)
+-) ENGINE=InnoDB;
++);
+ 
+ INSERT INTO `countries` (`code`, `continent_code`, `name`, `iso3`, `number`, `full_name`) VALUES
+   ('AF', 'AS', "Afghanistan", 'AFG', '004', "Islamic Republic of Afghanistan"),

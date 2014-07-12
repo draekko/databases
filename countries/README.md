@@ -15,10 +15,10 @@ cd ~
 mkdir sql
 cd sql
 cp ~/Downloads/countries.diff .
-cp ~/Downloads/ip2nation.zip .
-unzip ip2nation.zip
-patch -p 0 < ip2nation.diff
-sqlite3 ip2nation.db < ip2nation.sql
+cp ~/Downloads/countries.zip .
+unzip countries.zip
+patch -p 0 < countries.diff
+sqlite3 countries.db < countries.sql
 
 == 2014-07-12 ==
 v1.0.0          *   Initial files

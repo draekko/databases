@@ -18,6 +18,6 @@ cp ~/Downloads/GeoLite2-Country-CSV.zip .
 unzip GeoLite2-Country-CSV.zip
 bash fixdb.sh GeoLite2-Country-Blocks.csv GeoLite2-Country-Blocks-IPv4.csv
 sqlite3 geolite2.db < geolite2.sql
-
+ 
 == 2014-07-12 ==
 v1.0.0          *   Initial files
